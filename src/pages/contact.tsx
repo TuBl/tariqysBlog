@@ -1,5 +1,5 @@
-import ContactContainer from "../components/Contact/ContactContainer"
+import ContactDisplay from "../components/Contact/ContactDisplay"
 
 export default function Contact() {
-  return ContactContainer()
+  return ContactDisplay()
 }
