@@ -1,9 +1,11 @@
 import React, { Fragment } from "react"
-
+import HeaderDisplay from "./Header/HeaderDisplay"
 const Layout = ({ children }: any) => {
   return (
     <Fragment>
-      <header>Up</header>
+      <header>
+        <HeaderDisplay></HeaderDisplay>
+      </header>
       <main>{children}</main>
       <footer>Down</footer>
     </Fragment>

@@ -1,7 +1,7 @@
 import * as React from "react"
 import { graphql } from "gatsby"
 import * as styles from "../common/assets/styles/Index.module.scss"
-
+import Layout from "../components/Layout"
 interface IndexPageProps {
   data: {
     site: {
@@ -29,10 +29,12 @@ export default class IndexPage extends React.Component<IndexPageProps, {}> {
     const { name, tagline } = this.props.data.site.siteMetadata
 
     return (
-      <div className={styles.Container}>
-        <h1>{name}</h1>
-        <p>{tagline}</p>
-      </div>
+      <Layout>
+        <div className={styles.Container}>
+          <h1>{name}</h1>
+          <p>{tagline}</p>
+        </div>
+      </Layout>
     )
   }
 }

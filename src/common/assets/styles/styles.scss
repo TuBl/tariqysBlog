@@ -1,0 +1,73 @@
+@import "config";
+@import "util";
+
+//==========================================================================================================================================
+// Some dfault styling, set your font properties throught the project
+// default behaviour for a tags, lists, imgs (100% width to fill container)
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+// 1rem = x px (x being the font-size of the html tag which you can change as follow) [default is 1rem = 16px]
+// html {
+//   font-size: 10px;
+// }
+body {
+  font-family: "Kurale", "serif";
+  font-size: 1rem;
+  line-height: 1.6;
+  background-color: azure;
+  color: gray;
+}
+
+a {
+  text-decoration: none;
+  color: $coffee-color;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  width: 100%;
+}
+
+//========================================================================================================================================
+
+// Navbar
+//tip, how to choose between Grid & Flexbox, Grid for main layout (Profiles page for ex)
+// flex for smaller tasks (align stuff in navbar.. etc)
+//for navbars positioning
+//use position: fixed;  and z-index 1 because you always want it to be on top
+// top: 0;
+//border-bottom
+//opacity
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.7rem 2rem;
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  top: 0;
+  //   border-bottom: outset 1px $primary-color;
+  border-bottom: none;
+  opacity: 0.9;
+
+  ul {
+    display: flex;
+  }
+
+  a {
+    color: $syrup-color;
+    padding: 0.45rem;
+    margin: 0 0.25rem;
+
+    &:hover {
+      color: $coffee-color;
+    }
+  }
+}

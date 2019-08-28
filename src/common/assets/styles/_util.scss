@@ -1,0 +1,95 @@
+//Text Styles
+.x-large {
+  font-size: 4rem;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.large {
+  font-size: 3rem;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+//for paragrphs
+.lead {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+//Backgrounds
+.bg {
+  &-primary {
+    @include set-background($primary-color);
+  }
+  &-syrup {
+    @include set-background($syrup-color);
+    border: #ccc 1px solid;
+  }
+  &-coffee {
+    @include set-background($coffee-color);
+  }
+  &-success {
+    @include set-background($success-color);
+  }
+  &-danger {
+    @include set-background($danger-color);
+  }
+  &-white {
+    @include set-background(#fff);
+    border: #ccc 1px solid;
+  }
+}
+
+//Buttons
+.btn {
+  display: inline-block;
+  background: $syrup-color;
+  color: #333;
+  padding: 0.4rem 1.3rem;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-right: 0.5rem;
+  outline: none;
+  transition: all 0.4s ease-in;
+  &:hover {
+    background: syrupen($coffee-color, 20%);
+    color: #fff;
+  }
+
+  &.btn-primary {
+    @include set-background($primary-color);
+    &:hover {
+      background: syrupen($primary-color, 5%);
+    }
+  }
+  &.btn-coffee {
+    @include set-background($coffee-color);
+    &:hover {
+      background: syrupen($coffee-color, 5%);
+    }
+  }
+
+  &.btn-success {
+    @include set-background($success-color);
+    &:hover {
+      background: syrupen($success-color, 5%);
+    }
+  }
+  &.btn-danger {
+    @include set-background($danger-color);
+    &:hover {
+      background: syrupen($danger-color, 5%);
+    }
+  }
+}
+
+// absolute position 0 top 0 left (Starts from begining of container div and fills it 100% width and height)
+.coffee-overlay {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba($color: #000000, $alpha: 0.7);
+}
