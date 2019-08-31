@@ -7,7 +7,9 @@ const Layout = ({ children }: any) => {
         <HeaderDisplay></HeaderDisplay>
       </header>
       <main>{children}</main>
-      <footer>Down</footer>
+      <footer style={{ textAlign: "center" }}>
+        DONT FORGET TO ADD FOOTER HERE
+      </footer>
     </Fragment>
   )
 }

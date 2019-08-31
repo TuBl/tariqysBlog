@@ -2,6 +2,8 @@ import * as React from "react"
 import { graphql } from "gatsby"
 import * as styles from "../common/assets/styles/Index.module.scss"
 import Layout from "../components/Layout"
+import Landing from "../components/Landing/LandingDisplay"
+import LandingDisplay from "../components/Landing/LandingDisplay"
 interface IndexPageProps {
   data: {
     site: {
@@ -30,10 +32,7 @@ export default class IndexPage extends React.Component<IndexPageProps, {}> {
 
     return (
       <Layout>
-        <div className={styles.Container}>
-          <h1>{name}</h1>
-          <p>{tagline}</p>
-        </div>
+        <LandingDisplay></LandingDisplay>
       </Layout>
     )
   }

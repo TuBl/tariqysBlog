@@ -18,7 +18,7 @@ body {
   font-family: "Kurale", "serif";
   font-size: 1rem;
   line-height: 1.6;
-  background-color: azure;
+  background-color: $primary-color;
   color: gray;
 }
 
@@ -70,4 +70,34 @@ img {
       color: $coffee-color;
     }
   }
+}
+
+//Landing
+.landing {
+  position: relative;
+  height: 100vh;
+  margin-top: 4.5rem;
+  &-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-auto-rows: minmax(100px, auto);
+    grid-gap: 1rem;
+    justify-items: stretch;
+    align-items: stretch;
+  }
+}
+.landing-food {
+  grid-column: 1/2;
+  grid-row: 1/3;
+}
+.landing-books {
+  grid-column: 3;
+}
+//Toggle, revisit
+.toggle.react-toggle .react-toggle-track {
+  background-color: black;
+}
+
+.toggle.react-toggle--checked .react-toggle-track {
+  background-color: green;
 }
