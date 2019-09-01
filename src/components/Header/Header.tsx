@@ -1,10 +1,17 @@
-import React from "react"
+import React, {useState} from "react"
 // import headerStyles from "../../common/assets/styles/header.module.scss"
 import "../../common/assets/styles/styles.scss"
 import MyToggle from "./Toggle"
+import classnames from "classnames"
 const Header = () => {
+  const {navState, setState} = useState({
+    prevScrollpos: window.pageYOffset,
+    visible: true
+  })
   return (
-    <div className={"navbar bg-white"}>
+    <div className={classnames("navbar bg-white", {
+      "navbar-hidden": !navState.visible
+    })}>
       <h1>
         <MyToggle />
       </h1>
