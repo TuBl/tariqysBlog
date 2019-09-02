@@ -1,17 +1,33 @@
-import React, {useState} from "react"
+import React, { useState, useEffect } from "react"
 // import headerStyles from "../../common/assets/styles/header.module.scss"
 import "../../common/assets/styles/styles.scss"
 import MyToggle from "./Toggle"
 import classnames from "classnames"
 const Header = () => {
-  const {navState, setState} = useState({
+  const [navState, setState] = useState({
     prevScrollpos: window.pageYOffset,
-    visible: true
+    visible: true,
   })
+  const { prevScrollpos, visible } = navState
+  const handleScroll = () => {
+    const currentScrollPos = window.pageYOffset
+    const visible = prevScrollpos > currentScrollPos
+    setState({ ...navState, prevScrollpos: currentScrollPos, visible })
+  }
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll)
+    console.log("useeffect")
+    return () => {
+      window.removeEventListener("scroll", handleScroll)
+    }
+  })
+
   return (
-    <div className={classnames("navbar bg-white", {
-      "navbar-hidden": !navState.visible
-    })}>
+    <div
+      className={classnames("navbar  bg-white", {
+        "navbar-hidden": !visible,
+      })}
+    >
       <h1>
         <MyToggle />
       </h1>
